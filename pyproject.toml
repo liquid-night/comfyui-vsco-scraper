@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-vsco-scraper"
+description = "ComfyUI nodes for scraping and working with images from public VSCO profiles."
+version = "1.0.0"
+license = { file = "LICENSE" }
+dependencies = ["playwright>=1.48.0", "python-dotenv>=1.0.1"]
+
+[project.urls]
+Repository = "https://github.com/liquid-night/comfyui-vsco-scraper"
+
+# Used by Comfy Registry https://comfyregistry.org
+[tool.comfy]
+PublisherId = "liquid-night"
+DisplayName = "ComfyUI VSCO Scraper"
+Icon = ""
