@@ -59,6 +59,8 @@ All nodes are found under the **VSCO** category in the node browser.
 
 Scrapes a VSCO profile and returns images as a padded batch.
 
+![VSCO Scraper](images/scraper.png)
+
 **Inputs**
 
 | Name | Type | Default | Required | Description |
@@ -106,6 +108,8 @@ A progress bar is shown on the node in the ComfyUI UI during the download phase,
 
 Removes the black padding added by the scraper and returns each image at its original resolution.
 
+![VSCO Crop Padding](images/crop.png)
+
 **Inputs**
 
 | Name | Type | Default | Description |
@@ -124,6 +128,8 @@ Removes the black padding added by the scraper and returns each image at its ori
 ### VSCO Select Image
 
 Selects a single image at a given index from a VSCO batch or cropped set.
+
+![alt text](images/select.png)
 
 **Inputs**
 

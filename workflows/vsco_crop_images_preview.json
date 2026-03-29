@@ -1,0 +1,89 @@
+{
+  "last_node_id": 5,
+  "last_link_id": 2,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "VSCOScraper",
+      "pos": [50, 200],
+      "size": {"0": 315, "1": 182},
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {"name": "images", "type": "IMAGE", "links": [], "slot_index": 0},
+        {"name": "vsco_data", "type": "VSCO_SIZES", "links": [1], "slot_index": 1}
+      ],
+      "properties": {"Node name for S&R": "VSCOScraper"},
+      "widgets_values": ["your_username", "", 10, false, false]
+    },
+    {
+      "id": 2,
+      "type": "VSCOCrop",
+      "pos": [450, 200],
+      "size": {"0": 210, "1": 80},
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {"name": "vsco_data", "type": "VSCO_SIZES", "link": 1}
+      ],
+      "outputs": [
+        {"name": "images", "type": "IMAGE", "links": [2], "slot_index": 0},
+        {"name": "vsco_data", "type": "VSCO_SIZES", "links": [], "slot_index": 1}
+      ],
+      "properties": {"Node name for S&R": "VSCOCrop"},
+      "widgets_values": []
+    },
+    {
+      "id": 3,
+      "type": "PreviewImage",
+      "pos": [750, 200],
+      "size": {"0": 210, "1": 246},
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {"name": "images", "type": "IMAGE", "link": 2}
+      ],
+      "outputs": [],
+      "properties": {"Node name for S&R": "PreviewImage"},
+      "widgets_values": []
+    },
+    {
+      "id": 4,
+      "type": "Note",
+      "pos": [50, 50],
+      "size": {"0": 315, "1": 70},
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {"text": "Scrapes up to max_images photos from a public VSCO profile. Images are padded to uniform dimensions and passed to the crop node via vsco_data."},
+      "widgets_values": ["Scrapes up to max_images photos from a public VSCO profile. Images are padded to uniform dimensions and passed to the crop node via vsco_data."]
+    },
+    {
+      "id": 5,
+      "type": "Note",
+      "pos": [450, 50],
+      "size": {"0": 210, "1": 70},
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {"text": "Removes padding from each image, restoring original dimensions. Outputs a list of images — one per photo at native resolution."},
+      "widgets_values": ["Removes padding from each image, restoring original dimensions. Outputs a list of images — one per photo at native resolution."]
+    }
+  ],
+  "links": [
+    [1, 1, 1, 2, 0, "VSCO_SIZES"],
+    [2, 2, 0, 3, 0, "IMAGE"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

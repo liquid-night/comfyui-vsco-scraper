@@ -1,0 +1,57 @@
+{
+  "last_node_id": 3,
+  "last_link_id": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "VSCOScraper",
+      "pos": [50, 200],
+      "size": {"0": 315, "1": 182},
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {"name": "images", "type": "IMAGE", "links": [1], "slot_index": 0},
+        {"name": "vsco_data", "type": "VSCO_SIZES", "links": [], "slot_index": 1}
+      ],
+      "properties": {"Node name for S&R": "VSCOScraper"},
+      "widgets_values": ["your_username", "", 10, false, false]
+    },
+    {
+      "id": 2,
+      "type": "PreviewImage",
+      "pos": [450, 200],
+      "size": {"0": 210, "1": 246},
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {"name": "images", "type": "IMAGE", "link": 1}
+      ],
+      "outputs": [],
+      "properties": {"Node name for S&R": "PreviewImage"},
+      "widgets_values": []
+    },
+    {
+      "id": 3,
+      "type": "Note",
+      "pos": [50, 50],
+      "size": {"0": 315, "1": 88},
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {"text": "Scrapes up to max_images photos from a public VSCO profile. Images are padded to uniform dimensions so they can be batched together. Set force_refresh to re-scrape after new posts."},
+      "widgets_values": ["Scrapes up to max_images photos from a public VSCO profile. Images are padded to uniform dimensions so they can be batched together. Set force_refresh to re-scrape after new posts."]
+    }
+  ],
+  "links": [
+    [1, 1, 0, 2, 0, "IMAGE"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
